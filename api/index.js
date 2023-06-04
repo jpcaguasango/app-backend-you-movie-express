@@ -12,11 +12,11 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
+app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
 routerApi(app);
 
-app.get('/', (req, res) => {
-  res.redirect('/api-docs');
+app.get('/api', (req, res) => {
+  res.redirect('/api/docs');
 });
 
 app.listen(port, () => {
