@@ -1,0 +1,63 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "You Movie API - Express",
+    "description": "This document provides a detailed description of the API for the movies. The purpose of this API is to provide information about the movies, including their titles and documented with Swagger"
+  },
+  "paths": {
+    "/api/v1/movies/page/{page}": {
+      "get": {
+        "tags": ["Movies"],
+        "description": "Get data by page",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "list of validation errors"
+          }
+        }
+      }
+    },
+    "/api/v1/movies/query": {
+      "get": {
+        "tags": ["Movies"],
+        "description": "Get data by title and page",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/movies/{id}": {
+      "get": {
+        "tags": ["Movies"],
+        "description": "Get data by id movie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}
